@@ -1,0 +1,13 @@
+diff --git a/bash_completion b/bash_completion
+index 6601937..ed851a2 100644
+--- a/bash_completion
++++ b/bash_completion
+@@ -1247,7 +1247,7 @@ _known_hosts_real()
+     else
+         for i in /etc/ssh/ssh_config "${HOME}/.ssh/config" \
+             "${HOME}/.ssh2/config"; do
+-            [ -r $i ] && config=( "${config[@]}" "$i" )
++            [ -r "$i" ] && config=( "${config[@]}" "$i" )
+         done
+     fi
+ 
