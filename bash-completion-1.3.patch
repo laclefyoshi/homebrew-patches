@@ -1,5 +1,5 @@
 diff --git a/bash_completion b/bash_completion
-index 6601937..ed851a2 100644
+index 6601937..a824ef1 100644
 --- a/bash_completion
 +++ b/bash_completion
 @@ -1247,7 +1247,7 @@ _known_hosts_real()
@@ -8,6 +8,19 @@ index 6601937..ed851a2 100644
              "${HOME}/.ssh2/config"; do
 -            [ -r $i ] && config=( "${config[@]}" "$i" )
 +            [ -r "$i" ] && config=( "${config[@]}" "$i" )
+         done
+     fi
+ 
+@@ -1275,10 +1275,10 @@ _known_hosts_real()
+         for i in /etc/ssh/ssh_known_hosts /etc/ssh/ssh_known_hosts2 \
+             /etc/known_hosts /etc/known_hosts2 ~/.ssh/known_hosts \
+             ~/.ssh/known_hosts2; do
+-            [ -r $i ] && kh=( "${kh[@]}" $i )
++            [ -r "$i" ] && kh=( "${kh[@]}" "$i" )
+         done
+         for i in /etc/ssh2/knownhosts ~/.ssh2/hostkeys; do
+-            [ -d $i ] && khd=( "${khd[@]}" $i/*pub )
++            [ -d "$i" ] && khd=( "${khd[@]}" "$i"/*pub )
          done
      fi
  
